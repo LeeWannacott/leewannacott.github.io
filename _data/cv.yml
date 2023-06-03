@@ -2,96 +2,82 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Lee Wannacott
     - name: Languages
-      value: English, German
+      value: English
+
+- title: Skills
+  type: map
+  contents:
+    - name: Programming Languages
+      value: HTML5, CSS3, JavaScript/TypeScript, Python, Go, SQL.
+    - name: Frameworks
+      value: React Native, React.
+    - name: Other skills
+      value: Vim, Touch-typing (~70wpm).
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Enspiral Dev Academy Web Development (Training Scheme)
+      institution: Enspiral Dev Academy Aoteoroa
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - Tech stack - HTML5, CSS3, JavaScript, Node.js, React, Redux, Express.js and TDD.
+        - Completed 800 hours coding on multiple projects in a team environment over 16 weeks.
+        - Focus on pair programming, human skills and agile methodologies...
+    - title: Diploma for Graduates endorsed in ICT (Signal ICT)
+      institution: University of Otago, New Zealand
       description:
-        - Description 1.
-        - Description 2.
+        - Data Science Pathway
+    - title: Bachelor of Applied Management
+      institution: Otago Polytechnic
+      description:
+        - Accounting.
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Junior Automation Tester
+      institution: TracMap
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Built app to catch regressions by highlighting visual differences between app releases. Developed using TypeScript and the RemixJS framework.
+        - Setup automated testing that took screenshots for Android apps with Kotlin and UiAutomator2.
+        - Found several critical bugs before they were released onto production devices.
+        - Performed regression and smoke testing of devices each release cycle.
+        - Fixed failing JUnit tests.
+    - title: Programming internship
+      institution: Iris Data Science
       description:
-        - Description 1.
-        - Description 2.
+        - Supported computer vision and machine learning pipelines by writing scripts and programming software tools in Python.
+        - Cleaned, Collated, Tagged and Annotated images fed into machine learning models; sheepNN (prototyping facial recognition for sheep).
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
+        - Calibrated wide lens GoPro camera to remove distortion on images and videos using OpenCV.
 
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+        - Supported computer vision and machine learning pipelines by writing scripts in Python for image extraction, undistortion and manipulation.
 
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
+    - title: <a href="https://github.com/leewannacott/table-sort-js">table-sort-js</a>
+      year: 2021-now
+      description: HTML table sorting with no dependencies, builtin sort type inference and browser extensions available. #VanillaJS.
+    - title: <a href="https://github.com/leewannacott/public-audiobooks">public-audiobooks</a>
+      year: 2022-now
       description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
+    - title: <a href="https://github.com/leewannacott/blazing-releases">blazing-releases</a>
+      year: 2023-now
+      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
-      items: 
-        - Nobel Prize in Physics 
-        - Matteucci Medal
-    - year: 2029
-      items: 
-        - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items: 
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+    - name: Honors
       items:
-        - Description 1.
-        - Description 2.
+        - Anderson Lloyd Lawyers - Award for Excellence in Business Law.
+        - Law of Business Entities - Top Student (Bachelor of Applied Management).
+        - Intro to Commercial Law - Top Student (Bachelor of Applied Management).
+        - Accounting Principles - Top Student (Bachelor of Applied Management).
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Watching programming content, reading <a href="https://www.goodreads.com/lee_wannacott">Goodreads</a>

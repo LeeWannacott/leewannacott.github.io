@@ -1,12 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - leewannacott
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - leewannacott/table-sort-js
+  - leewannacott/blazing-releases
+  - leewannacott/public-audiobooks
+  - quick-lint/quick-lint-js
