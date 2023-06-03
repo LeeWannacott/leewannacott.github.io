@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>GitHub | Lee K. Wannacott</title>
+    <title>demo | Lee K. Wannacott</title>
     <meta name="author" content="Lee K. Wannacott">
     <meta name="description" content="Lee Wannacott Portfolio website.
 ">
@@ -39,7 +39,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/folio/assets/css/main.css">
-    <link rel="canonical" href="https://leewannacott.github.io/folio/repositories/">
+    <link rel="canonical" href="https://leewannacott.github.io/folio/demo/">
 
     <!-- Dark Mode -->
     
@@ -86,11 +86,11 @@
               <li class="nav-item ">
                 <a class="nav-link" href="/folio/projects/">Projects</a>
               </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="/folio/demo/">demo</a>
-              </li>
               <li class="nav-item active">
-                <a class="nav-link" href="/folio/repositories/">GitHub<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/folio/demo/">demo<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/folio/repositories/">GitHub</a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="/folio/cv/">Resume</a>
@@ -127,92 +127,60 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">GitHub</h1>
+            <h1 class="post-title">demo</h1>
             <p class="post-description"></p>
           </header>
 
           <article>
-            
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  
-    <div class="repo p-2 text-center">
-  <a href="https://github.com/leewannacott" rel="external nofollow noopener" target="_blank">
-    <img class="repo-img-light w-100" alt="leewannacott" src="https://github-readme-stats.vercel.app/api/?username=leewannacott&amp;theme=default&amp;show_icons=true">
-    <img class="repo-img-dark w-100" alt="leewannacott" src="https://github-readme-stats.vercel.app/api/?username=leewannacott&amp;theme=dark&amp;show_icons=true">
-  </a>
-</div>
+            <script type="module">
+// import { Octokit, App } from "https://www.jsdelivr.com/package/npm/octokit";
+  const { Octokit } = await import("https://cdn.skypack.dev/@octokit/core");
+const octokit = new Octokit({
+  auth: 'YOUR-TOKEN'
+})
+let test = await octokit.request('GET /users/{username}/repos', {
+  username: 'leewannacott',
+  headers: {
+    'X-GitHub-Api-Version': '2022-11-28'
+  }
+})
+console.log(test)
+console.log("yo")
+</script>
 
-  
-</div>
-
-<hr>
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  <div class="repo p-2 text-center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy" rel="external nofollow noopener" target="_blank">
-    <img class="repo-img-light w-200" alt="leewannacott" src="https://github-profile-trophy.vercel.app/?username=leewannacott&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C">
-    <img class="repo-img-dark w-200" alt="leewannacott" src="https://github-profile-trophy.vercel.app/?username=leewannacott&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C">
-  </a>
-</div>
-
-  </div>
-
-<hr>
-
-<h2 id="github-repositories">GitHub Repositories</h2>
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  
-    
-
-
-
-<div class="repo p-2 text-center">
-  <a href="https://github.com/leewannacott/table-sort-js" rel="external nofollow noopener" target="_blank">
-    <img class="repo-img-light w-100" alt="leewannacott/table-sort-js" src="https://github-readme-stats.vercel.app/api/pin/?username=leewannacott&amp;repo=table-sort-js&amp;theme=default&amp;show_owner=false">
-    <img class="repo-img-dark w-100" alt="leewannacott/table-sort-js" src="https://github-readme-stats.vercel.app/api/pin/?username=leewannacott&amp;repo=table-sort-js&amp;theme=dark&amp;show_owner=false">
-  </a>
-</div>
-
-  
-    
-
-
-
-<div class="repo p-2 text-center">
-  <a href="https://github.com/leewannacott/blazing-releases" rel="external nofollow noopener" target="_blank">
-    <img class="repo-img-light w-100" alt="leewannacott/blazing-releases" src="https://github-readme-stats.vercel.app/api/pin/?username=leewannacott&amp;repo=blazing-releases&amp;theme=default&amp;show_owner=false">
-    <img class="repo-img-dark w-100" alt="leewannacott/blazing-releases" src="https://github-readme-stats.vercel.app/api/pin/?username=leewannacott&amp;repo=blazing-releases&amp;theme=dark&amp;show_owner=false">
-  </a>
-</div>
-
-  
-    
-
-
-
-<div class="repo p-2 text-center">
-  <a href="https://github.com/leewannacott/public-audiobooks" rel="external nofollow noopener" target="_blank">
-    <img class="repo-img-light w-100" alt="leewannacott/public-audiobooks" src="https://github-readme-stats.vercel.app/api/pin/?username=leewannacott&amp;repo=public-audiobooks&amp;theme=default&amp;show_owner=false">
-    <img class="repo-img-dark w-100" alt="leewannacott/public-audiobooks" src="https://github-readme-stats.vercel.app/api/pin/?username=leewannacott&amp;repo=public-audiobooks&amp;theme=dark&amp;show_owner=false">
-  </a>
-</div>
-
-  
-    
-
-
-
-<div class="repo p-2 text-center">
-  <a href="https://github.com/quick-lint/quick-lint-js" rel="external nofollow noopener" target="_blank">
-    <img class="repo-img-light w-100" alt="quick-lint/quick-lint-js" src="https://github-readme-stats.vercel.app/api/pin/?username=quick-lint&amp;repo=quick-lint-js&amp;theme=default&amp;show_owner=true">
-    <img class="repo-img-dark w-100" alt="quick-lint/quick-lint-js" src="https://github-readme-stats.vercel.app/api/pin/?username=quick-lint&amp;repo=quick-lint-js&amp;theme=dark&amp;show_owner=true">
-  </a>
-</div>
-
-  
-</div>
-
+<table classname="table table-sort table-bordered table-responsive table-hover">
+  <thead classname="cw-light">
+    <tr>
+      <th>Repository Name</th>
+      <th>Language</th>
+      <th classname="order-by-desc">Created</th>
+      <th>Description</th>
+      <th classname="order-by-desc">Forks</th>
+      <th classname="order-by-desc">Open issues</th>
+      <th classname="order-by-desc">Stars</th>
+      <th classname="order-by-desc file-size-sort">Size</th>
+    </tr>
+  </thead>
+  <tbody classname="table-hover">
+    {this.state.repos.map((repo) =&gt; (
+    <tr>
+      <td>
+        <a href="{repo.html_url}" target="_blank">  </a>
+      </td>
+      <td>{repo.language}</td>
+      <td>
+        {" "} {repo.created_at.split("-")[0] + "-" +
+        repo.created_at.split("-")[1]}
+      </td>
+      <td>{repo.description}</td>
+      <td>{repo.forks}</td>
+      <td>{repo.open_issues}</td>
+      <td>{repo.stargazers_count}</td>
+      <td>{repo.size*1000+"B"}</td>
+    </tr>
+    ))}
+  </tbody>
+</table>
 
           </article>
 
