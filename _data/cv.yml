@@ -16,23 +16,19 @@
     - name: Other skills
       value: Vim, Touch-typing (~70wpm).
 
-- title: Education
+
+- title: Open Source Projects
   type: time_table
   contents:
-    - title: Enspiral Dev Academy Web Development (Training Scheme)
-      institution: Enspiral Dev Academy Aoteoroa
-      description:
-        - Tech stack - HTML5, CSS3, JavaScript, Node.js, React, Redux, Express.js and TDD.
-        - Completed 800 hours coding on multiple projects in a team environment over 16 weeks.
-        - Focus on pair programming, human skills and agile methodologies...
-    - title: Diploma for Graduates endorsed in ICT (Signal ICT)
-      institution: University of Otago, New Zealand
-      description:
-        - Data Science Pathway
-    - title: Bachelor of Applied Management
-      institution: Otago Polytechnic
-      description:
-        - Accounting.
+    - title: <a href="https://github.com/leewannacott/table-sort-js">table-sort-js</a>
+      year: 2021-now
+      description: HTML table sorting with no dependencies, builtin sort type inference and browser extensions available. #VanillaJS.
+    - title: <a href="https://github.com/leewannacott/public-audiobooks">public-audiobooks</a>
+      year: 2022-now
+      description: Listen to over 50,000 Audiobooks read by LibriVox volunteers; Available on the  <a href="https://play.google.com/store/apps/details?id=com.leewannacott.libriaudire">Google play store</a>. Built with React Native.
+    - title: <a href="https://github.com/leewannacott/blazing-releases">blazing-releases</a>
+      year: 2023-now
+      description: CLI for Creating GitHub Releases from a CHANGELOG.md; compatible with the <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> specification.
 
 - title: Experience
   type: time_table
@@ -55,18 +51,25 @@
 
         - Supported computer vision and machine learning pipelines by writing scripts in Python for image extraction, undistortion and manipulation.
 
-- title: Open Source Projects
+
+- title: Education
   type: time_table
   contents:
-    - title: <a href="https://github.com/leewannacott/table-sort-js">table-sort-js</a>
-      year: 2021-now
-      description: HTML table sorting with no dependencies, builtin sort type inference and browser extensions available. #VanillaJS.
-    - title: <a href="https://github.com/leewannacott/public-audiobooks">public-audiobooks</a>
-      year: 2022-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-    - title: <a href="https://github.com/leewannacott/blazing-releases">blazing-releases</a>
-      year: 2023-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Enspiral Dev Academy Web Development (Training Scheme)
+      institution: Enspiral Dev Academy Aoteoroa
+      description:
+        - Tech stack - HTML5, CSS3, JavaScript, Node.js, React, Redux, Express.js and TDD.
+        - Completed 800 hours coding on multiple projects in a team environment over 16 weeks.
+        - Focus on pair programming, human skills and agile methodologies...
+    - title: Diploma for Graduates endorsed in ICT (Signal ICT)
+      institution: University of Otago, New Zealand
+      description:
+        - Data Science Pathway
+    - title: Bachelor of Applied Management
+      institution: Otago Polytechnic
+      description:
+        - Accounting.
+
 - title: Honors and Awards
   type: time_table
   contents:
