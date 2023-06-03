@@ -1,4 +1,4 @@
-- title: General Information
+- title: 
   type: map
   contents:
     - name: Full Name
@@ -83,4 +83,4 @@
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Watching programming content, reading <a href="https://www.goodreads.com/lee_wannacott">Goodreads</a>
+    - <b>Hobbies</b> - Watching programming content, reading <a href="https://www.goodreads.com/lee_wannacott">#Goodreads</a>
