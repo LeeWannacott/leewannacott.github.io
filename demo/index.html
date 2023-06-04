@@ -133,19 +133,44 @@
 
           <article>
             <script type="module">
-// import { Octokit, App } from "https://www.jsdelivr.com/package/npm/octokit";
-  const { Octokit } = await import("https://cdn.skypack.dev/@octokit/core");
-const octokit = new Octokit({
-  auth: 'YOUR-TOKEN'
-})
-let test = await octokit.request('GET /users/{username}/repos', {
-  username: 'leewannacott',
-  headers: {
-    'X-GitHub-Api-Version': '2022-11-28'
-  }
-})
-console.log(test)
-console.log("yo")
+  // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
+  let repos = await fetch(
+    `https://api.github.com/users/leewannacott/repos`,
+    {
+      username: "leewannacott",
+      headers: {
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+    }
+  );
+
+  // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
+  let user = await fetch(
+    `https://api.github.com/users/leewannacott`,
+    {
+      username: "leewannacott",
+      headers: {
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+    }
+  );
+
+  // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
+  let stars = await fetch(
+    `https://api.github.com/users/leewannacott/starred`,
+    {
+      username: "leewannacott",
+      headers: {
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+    }
+  );
+
+  console.log("yo");
+  console.log("yo", repos);
+  console.log("yo", user);
+  console.log("yo", stars);
+  // console.log(test)
 </script>
 
 <table classname="table table-sort table-bordered table-responsive table-hover">
@@ -162,7 +187,7 @@ console.log("yo")
     </tr>
   </thead>
   <tbody classname="table-hover">
-    {this.state.repos.map((repo) =&gt; (
+    {$repos.map((repo) =&gt; (
     <tr>
       <td>
         <a href="{repo.html_url}" target="_blank">  </a>
@@ -192,7 +217,7 @@ console.log("yo")
     <!-- Footer -->    
     <footer class="fixed-bottom">
       <div class="container mt-0">
-        © Copyright 2023 Lee K. Wannacott. Last updated: June 03, 2023.
+        © Copyright 2023 Lee K. Wannacott. Last updated: June 04, 2023.
       </div>
     </footer>
 
