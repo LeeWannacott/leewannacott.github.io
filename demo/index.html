@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>demo | Lee K. Wannacott</title>
+    <title>Demo | Lee K. Wannacott</title>
     <meta name="author" content="Lee K. Wannacott">
     <meta name="description" content="Lee Wannacott Portfolio website.
 ">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
 
     <!-- Bootstrap Table -->
-    <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@/dist/bootstrap-table.min.css">
+    <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.css">
 
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
@@ -86,8 +86,8 @@
               <li class="nav-item ">
                 <a class="nav-link" href="/folio/projects/">Projects</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/folio/demo/">demo<span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <a class="nav-link" href="/folio/demo/">demo</a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="/folio/repositories/">GitHub</a>
@@ -127,89 +127,90 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">demo</h1>
+            <h1 class="post-title">Demo</h1>
             <p class="post-description"></p>
           </header>
 
           <article>
-            <script type="module">
+            <div id="container"></div>
+
+<script type="module">
   // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
-  async function getstuff(){
-  let repos = await fetch(
-    `https://api.github.com/users/leewannacott/repos`,
-    {
+  async function getstuff() {
+    let repos = await fetch(`https://api.github.com/users/leewannacott/repos`, {
       username: "leewannacott",
       headers: {
         "X-GitHub-Api-Version": "2022-11-28",
       },
-    }
-  );
+    });
 
-  // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
-  let user = await fetch(
-    `https://api.github.com/users/leewannacott`,
-    {
+    // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
+    let user = await fetch(`https://api.github.com/users/leewannacott`, {
       username: "leewannacott",
       headers: {
         "X-GitHub-Api-Version": "2022-11-28",
       },
-    }
-  );
+    });
 
-  // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
-  let stars = await fetch(
-    `https://api.github.com/users/leewannacott/starred`,
-    {
-      username: "leewannacott",
-      headers: {
-        "X-GitHub-Api-Version": "2022-11-28",
-      },
-    }
-  ).then((stars)=>console.log("t",stars));
+    // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
+    let stars = await fetch(
+      `https://api.github.com/users/leewannacott/starred`,
+      {
+        username: "leewannacott",
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
+      }
+    );
 
-  console.log("yo", repos.body.getReader);
-  console.log("yo", user);
-  console.log("yo", stars);
-
+    repos = await repos.json();
+    user = await user.json();
+    stars = await stars.json();
+    return repos;
   }
-  getstuff()
-  console.log("yo");
-  // console.log(test)
-</script>
+  let repos = await getstuff();
+  // Sample JSON data
+  let container = $("#container");
+  let table = $("<table>");
+  let cols = Object.keys(repos[0]);
+  let thead = $("<thead>");
+  let theadClose = $("</thead>");
+  let tr = $("<tr>");
+  // Loop through the column names and create header cells
+  $.each(cols, function (i, item) {
+  if(item =="name" || item == "language"){
+  console.log(item)
+    let th = $("<th>");
+    th.text(item); // Set the column name as the text of the header cell
+    tr.append(th); // Append the header cell to the header row
+    }
+  });
+  thead.append(tr); // Append the header row to the header
+  thead.append(theadClose)
+  table.append(tr); // Append the header to the table
 
-<table classname="table table-sort table-bordered table-responsive table-hover">
-  <thead classname="cw-light">
-    <tr>
-      <th>Repository Name</th>
-      <th>Language</th>
-      <th classname="order-by-desc">Created</th>
-      <th>Description</th>
-      <th classname="order-by-desc">Forks</th>
-      <th classname="order-by-desc">Open issues</th>
-      <th classname="order-by-desc">Stars</th>
-      <th classname="order-by-desc file-size-sort">Size</th>
-    </tr>
-  </thead>
-  <tbody classname="table-hover">
-    {$repos.map((repo) =&gt; (
-    <tr>
-      <td>
-        <a href="{repo.html_url}" target="_blank">  </a>
-      </td>
-      <td>{repo.language}</td>
-      <td>
-        {" "} {repo.created_at.split("-")[0] + "-" +
-        repo.created_at.split("-")[1]}
-      </td>
-      <td>{repo.description}</td>
-      <td>{repo.forks}</td>
-      <td>{repo.open_issues}</td>
-      <td>{repo.stargazers_count}</td>
-      <td>{repo.size*1000+"B"}</td>
-    </tr>
-    ))}
-  </tbody>
-</table>
+  // Loop through the JSON data and create table rows
+  $.each(repos, function (i, item) {
+  console.log(item)
+    let tr = $("<tr>");
+    // Get the values of the current object in the JSON data
+    let vals = Object.values(item);
+    // Loop through the values and create table cells
+
+    console.log(vals)
+    $.each(vals, (i, elem) => {
+      let td = $("<td>");
+      td.text(elem); // Set the value as the text of the table cell
+      tr.append(td); // Append the table cell to the table row
+    });
+    table.append(tr); // Append the table row to the table
+  });
+  container.append(table); // Append the table to the container element
+  // $(document).ready(function () {
+  // Use the given data to create // the table
+  // $("#table").bootstrapTable({ data: repos });
+  // });
+</script>
 
           </article>
 
@@ -243,7 +244,7 @@
   <script defer src="/folio/assets/js/zoom.js"></script>
 
   <!-- Bootstrap Table -->
-  <script defer src="https://unpkg.com/bootstrap-table@/dist/bootstrap-table.min.js"></script>
+  <script defer src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.js"></script>
 
   <!-- Load Common JS -->
   <script src="/folio/assets/js/no_defer.js"></script>
