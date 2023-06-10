@@ -1,86 +1,89 @@
 ---
 layout: page
 permalink: /demo/
-title: demo
+title: Demo
 // description: Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.
 // nav: true
 nav_order: 3
 ---
+
+
+<div id="container"></div>
+
 <script type="module">
   // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
-  async function getstuff(){
-  let repos = await fetch(
-    `https://api.github.com/users/leewannacott/repos`,
-    {
+  async function getstuff() {
+    let repos = await fetch(`https://api.github.com/users/leewannacott/repos`, {
       username: "leewannacott",
       headers: {
         "X-GitHub-Api-Version": "2022-11-28",
       },
-    }
-  );
+    });
 
-  // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
-  let user = await fetch(
-    `https://api.github.com/users/leewannacott`,
-    {
+    // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
+    let user = await fetch(`https://api.github.com/users/leewannacott`, {
       username: "leewannacott",
       headers: {
         "X-GitHub-Api-Version": "2022-11-28",
       },
-    }
-  );
+    });
 
-  // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
-  let stars = await fetch(
-    `https://api.github.com/users/leewannacott/starred`,
-    {
-      username: "leewannacott",
-      headers: {
-        "X-GitHub-Api-Version": "2022-11-28",
-      },
-    }
-  ).then((stars)=>console.log("t",stars));
+    // ?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
+    let stars = await fetch(
+      `https://api.github.com/users/leewannacott/starred`,
+      {
+        username: "leewannacott",
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
+      }
+    );
 
-  console.log("yo", repos.body.getReader);
-  console.log("yo", user);
-  console.log("yo", stars);
-
+    repos = await repos.json();
+    user = await user.json();
+    stars = await stars.json();
+    return repos;
   }
-  getstuff()
-  console.log("yo");
-  // console.log(test)
-</script>
+  let repos = await getstuff();
+  // Sample JSON data
+  let container = $("#container");
+  let table = $("<table>");
+  let cols = Object.keys(repos[0]);
+  let thead = $("<thead>");
+  let theadClose = $("</thead>");
+  let tr = $("<tr>");
+  // Loop through the column names and create header cells
+  $.each(cols, function (i, item) {
+  if(item =="name" || item == "language"){
+  console.log(item)
+    let th = $("<th>");
+    th.text(item); // Set the column name as the text of the header cell
+    tr.append(th); // Append the header cell to the header row
+    }
+  });
+  thead.append(tr); // Append the header row to the header
+  thead.append(theadClose)
+  table.append(tr); // Append the header to the table
 
-<table className="table table-sort table-bordered table-responsive table-hover">
-  <thead className="cw-light">
-    <tr>
-      <th>Repository Name</th>
-      <th>Language</th>
-      <th className="order-by-desc">Created</th>
-      <th>Description</th>
-      <th className="order-by-desc">Forks</th>
-      <th className="order-by-desc">Open issues</th>
-      <th className="order-by-desc">Stars</th>
-      <th className="order-by-desc file-size-sort">Size</th>
-    </tr>
-  </thead>
-  <tbody className="table-hover">
-    {$repos.map((repo) => (
-    <tr>
-      <td>
-        <a href="{repo.html_url}" target="_blank"> {{user.name}} </a>
-      </td>
-      <td>{repo.language}</td>
-      <td>
-        {" "} {repo.created_at.split("-")[0] + "-" +
-        repo.created_at.split("-")[1]}
-      </td>
-      <td>{repo.description}</td>
-      <td>{repo.forks}</td>
-      <td>{repo.open_issues}</td>
-      <td>{repo.stargazers_count}</td>
-      <td>{repo.size*1000+"B"}</td>
-    </tr>
-    ))}
-  </tbody>
-</table>
+  // Loop through the JSON data and create table rows
+  $.each(repos, function (i, item) {
+  console.log(item)
+    let tr = $("<tr>");
+    // Get the values of the current object in the JSON data
+    let vals = Object.values(item);
+    // Loop through the values and create table cells
+
+    console.log(vals)
+    $.each(vals, (i, elem) => {
+      let td = $("<td>");
+      td.text(elem); // Set the value as the text of the table cell
+      tr.append(td); // Append the table cell to the table row
+    });
+    table.append(tr); // Append the table row to the table
+  });
+  container.append(table); // Append the table to the container element
+  // $(document).ready(function () {
+  // Use the given data to create // the table
+  // $("#table").bootstrapTable({ data: repos });
+  // });
+</script>
